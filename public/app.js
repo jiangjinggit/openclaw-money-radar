@@ -36,6 +36,7 @@ function detailBlock(item) {
       <div class="details-content">
         <p><strong>适合谁：</strong>${item.details?.fit || '暂无'}</p>
         <p><strong>怎么赚钱：</strong>${item.details?.monetization || '暂无'}</p>
+        <p><a class="text-link" href="/public/detail.html?id=${encodeURIComponent(item.id)}">打开单独详情页</a></p>
       </div>
     </details>
   `;
@@ -89,7 +90,7 @@ function render(ideas) {
         <div class="tier-row">
           <strong>${item.name}</strong>
           <span>${item.positioning}</span>
-          <span>综合 ${averageScore(item.scores).toFixed(1)}</span>
+          <span><a class="text-link" href="/public/detail.html?id=${encodeURIComponent(item.id)}">查看详情</a></span>
         </div>
       `).join('') : '<div class="tier-row empty">暂无项目</div>'}
     </section>
