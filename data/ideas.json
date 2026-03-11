@@ -12,6 +12,11 @@
       "7-14 天可做 MVP",
       "适合内容驱动获客"
     ],
+    "tags": ["security", "audit", "cost", "async-friendly", "first-money"],
+    "details": {
+      "fit": "更适合已经自托管、准备上线或准备接真实能力的用户。",
+      "monetization": "适合先卖 199/299 首单体检，再升级到专业版与巡检订阅。"
+    },
     "scores": {
       "moneyProbability": 8,
       "launchSpeed": 8,
@@ -32,6 +37,11 @@
       "适合做订阅层",
       "可逐步扩到多节点和团队版"
     ],
+    "tags": ["observability", "ops", "retention", "subscription", "agent-ops"],
+    "details": {
+      "fit": "更适合已经进入真实运行阶段、开始关心成本和异常的用户。",
+      "monetization": "更适合长期订阅和主壳承接，而不是最先拿第一笔钱。"
+    },
     "scores": {
       "moneyProbability": 7,
       "launchSpeed": 7,
@@ -52,6 +62,11 @@
       "数字产品化容易",
       "适合做增长入口"
     ],
+    "tags": ["template", "workflow", "low-ticket", "growth-entry"],
+    "details": {
+      "fit": "更适合希望快速上架数字产品、先做低客单验证的人。",
+      "monetization": "更容易做小额成交，但同质化和续费压力更明显。"
+    },
     "scores": {
       "moneyProbability": 6,
       "launchSpeed": 9,
@@ -72,6 +87,11 @@
       "可做长期品牌资产",
       "可与产品线联动"
     ],
+    "tags": ["knowledge", "training", "content", "methodology"],
+    "details": {
+      "fit": "更适合内容驱动创始人和希望沉淀长期资产的人。",
+      "monetization": "更像知识中层和品牌资产，不是最强的短期现金流切口。"
+    },
     "scores": {
       "moneyProbability": 5,
       "launchSpeed": 7,
@@ -92,6 +112,11 @@
       "可作为长期扩展",
       "但首版复杂度更高"
     ],
+    "tags": ["multi-node", "governance", "team", "expansion"],
+    "details": {
+      "fit": "更适合多团队、多环境、多节点逐渐复杂的运行场景。",
+      "monetization": "长期价值高，但不适合作为最先启动的 MVP。"
+    },
     "scores": {
       "moneyProbability": 6,
       "launchSpeed": 5,

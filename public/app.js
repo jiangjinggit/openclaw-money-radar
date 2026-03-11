@@ -3,6 +3,7 @@ const topCards = document.getElementById('topCards');
 const tierBoards = document.getElementById('tierBoards');
 const allIdeas = document.getElementById('allIdeas');
 const tierFilter = document.getElementById('tierFilter');
+const tagFilter = document.getElementById('tagFilter');
 const sortBy = document.getElementById('sortBy');
 
 const scoreKeys = [
@@ -23,11 +24,34 @@ function scoreValue(item, key) {
   return Number(item.scores?.[key] || 0);
 }
 
+function fillTagOptions(ideas) {
+  const tags = [...new Set(ideas.flatMap(item => item.tags || []))].sort();
+  tagFilter.innerHTML = '<option value="ALL">全部标签</option>' + tags.map(tag => `<option value="${tag}">${tag}</option>`).join('');
+}
+
+function detailBlock(item) {
+  return `
+    <details class="details-box">
+      <summary>查看详情</summary>
+      <div class="details-content">
+        <p><strong>适合谁：</strong>${item.details?.fit || '暂无'}</p>
+        <p><strong>怎么赚钱：</strong>${item.details?.monetization || '暂无'}</p>
+      </div>
+    </details>
+  `;
+}
+
 function render(ideas) {
   const tierValue = tierFilter.value;
+  const tagValue = tagFilter.value;
   const sortKey = sortBy.value;
 
-  const filtered = ideas.filter(item => tierValue === 'ALL' ? true : item.tier === tierValue);
+  const filtered = ideas.filter(item => {
+    const tierOk = tierValue === 'ALL' ? true : item.tier === tierValue;
+    const tagOk = tagValue === 'ALL' ? true : (item.tags || []).includes(tagValue);
+    return tierOk && tagOk;
+  });
+
   const sorted = [...filtered].sort((a, b) => {
     if (scoreValue(b, sortKey) !== scoreValue(a, sortKey)) {
       return scoreValue(b, sortKey) - scoreValue(a, sortKey);
@@ -51,8 +75,10 @@ function render(ideas) {
       <div class="idea-top"><span class="tier ${item.tier}">${item.tier}</span><span class="avg">综合 ${averageScore(item.scores).toFixed(1)}</span></div>
       <h3>${item.name}</h3>
       <p>${item.summary}</p>
+      <div class="tag-list">${(item.tags || []).map(tag => `<span>${tag}</span>`).join('')}</div>
       <div class="meta">定位：${item.positioning}</div>
       <div class="meta">仓库：${item.repo}</div>
+      ${detailBlock(item)}
     </article>
   `).join('') || '<article class="card">暂无结果</article>';
 
@@ -76,6 +102,7 @@ function render(ideas) {
       <div class="idea-top"><span class="tier ${item.tier}">${item.tier}</span><span class="avg">综合 ${averageScore(item.scores).toFixed(1)}</span></div>
       <h3>${item.name}</h3>
       <p>${item.summary}</p>
+      <div class="tag-list">${(item.tags || []).map(tag => `<span>${tag}</span>`).join('')}</div>
       <div class="score-list">
         ${scoreKeys.map(([key, label]) => `<span>${label}：${item.scores?.[key] ?? '-'}</span>`).join('')}
       </div>
@@ -83,12 +110,15 @@ function render(ideas) {
         <strong>为什么现在值得做</strong>
         <ul>${(item.why_now || []).map(x => `<li>${x}</li>`).join('')}</ul>
       </div>
+      ${detailBlock(item)}
     </article>
   `).join('') || '<article class="card">暂无结果</article>';
 }
 
 fetch('/data/ideas.json').then(r => r.json()).then(ideas => {
+  fillTagOptions(ideas);
   render(ideas);
   tierFilter.addEventListener('change', () => render(ideas));
+  tagFilter.addEventListener('change', () => render(ideas));
   sortBy.addEventListener('change', () => render(ideas));
 });

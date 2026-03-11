@@ -66,7 +66,8 @@ openclaw-money-radar/
 ## 当前可预览内容
 
 - 最小静态排行榜页：`public/index.html`
-- 支持：梯队筛选、评分排序、Top 机会卡、全部项目列表
+- 支持：梯队筛选、标签筛选、评分排序、Top 机会卡、全部项目列表
+- 支持：详情展开（适合谁 / 怎么赚钱）
 - 数据源：`data/ideas.json`
 - 本地预览：`npm run dev` 后打开 `http://127.0.0.1:4340/public/`
 
