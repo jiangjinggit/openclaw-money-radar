@@ -1,0 +1,18 @@
+{
+  "name": "openclaw-money-radar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenClaw ecosystem business opportunity radar and investment committee prompt pack",
+  "scripts": {
+    "dev": "node -e \"console.log('OpenClaw Money Radar scaffold ready')\"",
+    "start": "node -e \"console.log('OpenClaw Money Radar scaffold ready')\""
+  },
+  "keywords": [
+    "openclaw",
+    "agent",
+    "business",
+    "startup",
+    "ideas"
+  ],
+  "license": "MIT"
+}

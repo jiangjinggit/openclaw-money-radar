@@ -1,0 +1,11 @@
+[
+  {
+    "id": "idea-001",
+    "title": "OpenClaw 私有部署代运维服务",
+    "tier": "T1",
+    "status": "candidate",
+    "monetization": "setup + monthly maintenance",
+    "why_now": "生态升温，很多人会用但不会稳定部署",
+    "first_action": "发布一篇《OpenClaw 私有部署避坑清单》并附诊断表单"
+  }
+]
