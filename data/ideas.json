@@ -11,7 +11,14 @@
       "更适合异步与模板化交付",
       "7-14 天可做 MVP",
       "适合内容驱动获客"
-    ]
+    ],
+    "scores": {
+      "moneyProbability": 8,
+      "launchSpeed": 8,
+      "timeFriendliness": 9,
+      "contentPotential": 8,
+      "expansionPotential": 8
+    }
   },
   {
     "id": "monitor-lite-agent-ops-shell",
@@ -24,7 +31,14 @@
       "长期留存逻辑更强",
       "适合做订阅层",
       "可逐步扩到多节点和团队版"
-    ]
+    ],
+    "scores": {
+      "moneyProbability": 7,
+      "launchSpeed": 7,
+      "timeFriendliness": 8,
+      "contentPotential": 7,
+      "expansionPotential": 9
+    }
   },
   {
     "id": "template-market",
@@ -37,7 +51,14 @@
       "上线快",
       "数字产品化容易",
       "适合做增长入口"
-    ]
+    ],
+    "scores": {
+      "moneyProbability": 6,
+      "launchSpeed": 9,
+      "timeFriendliness": 8,
+      "contentPotential": 7,
+      "expansionPotential": 6
+    }
   },
   {
     "id": "knowledge-products",
@@ -50,7 +71,14 @@
       "适合内容沉淀",
       "可做长期品牌资产",
       "可与产品线联动"
-    ]
+    ],
+    "scores": {
+      "moneyProbability": 5,
+      "launchSpeed": 7,
+      "timeFriendliness": 8,
+      "contentPotential": 9,
+      "expansionPotential": 7
+    }
   },
   {
     "id": "multi-node-governance-console",
@@ -63,6 +91,13 @@
       "团队场景价值高",
       "可作为长期扩展",
       "但首版复杂度更高"
-    ]
+    ],
+    "scores": {
+      "moneyProbability": 6,
+      "launchSpeed": 5,
+      "timeFriendliness": 6,
+      "contentPotential": 6,
+      "expansionPotential": 8
+    }
   }
 ]

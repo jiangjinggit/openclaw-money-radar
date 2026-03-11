@@ -59,6 +59,8 @@ openclaw-money-radar/
 - `docs/TIER_RANKING.md`
 - `docs/CASHFLOW_VS_SHELL.md`
 - `docs/TOP5_OPPORTUNITIES.md`
+- `docs/IDEAS_SCHEMA.md`
+- `docs/SCORING_MODEL.md`
 - `data/ideas.json`
 
 ## 下一步

@@ -15,6 +15,8 @@
 - [x] 落盘短期现金流 vs 长期主壳判断
 - [x] 落盘产品矩阵判断（security / monitor / template / knowledge / radar）
 - [x] 增加短期现金流 vs 长期主壳对比页
+- [x] 增加 ideas schema 说明
+- [x] 增加项目评分模型
 
 ## v0.3
 - [ ] 增加 Web UI
