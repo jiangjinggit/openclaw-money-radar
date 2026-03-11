@@ -18,6 +18,29 @@
 
   <section class="summary" id="summary"></section>
 
+  <section class="toolbar">
+    <label>
+      梯队筛选
+      <select id="tierFilter">
+        <option value="ALL">全部</option>
+        <option value="T1">T1</option>
+        <option value="T2">T2</option>
+        <option value="T3">T3</option>
+      </select>
+    </label>
+    <label>
+      排序方式
+      <select id="sortBy">
+        <option value="avg">综合评分</option>
+        <option value="moneyProbability">赚钱概率</option>
+        <option value="launchSpeed">启动速度</option>
+        <option value="timeFriendliness">时间友好度</option>
+        <option value="contentPotential">内容传播性</option>
+        <option value="expansionPotential">扩张性</option>
+      </select>
+    </label>
+  </section>
+
   <section>
     <h2>Top 机会卡</h2>
     <div id="topCards" class="grid"></div>

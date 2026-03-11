@@ -2,6 +2,8 @@ const summary = document.getElementById('summary');
 const topCards = document.getElementById('topCards');
 const tierBoards = document.getElementById('tierBoards');
 const allIdeas = document.getElementById('allIdeas');
+const tierFilter = document.getElementById('tierFilter');
+const sortBy = document.getElementById('sortBy');
 
 const scoreKeys = [
   ['moneyProbability', '赚钱概率'],
@@ -13,13 +15,24 @@ const scoreKeys = [
 
 function averageScore(scores = {}) {
   const values = scoreKeys.map(([key]) => Number(scores[key] || 0));
-  return (values.reduce((a, b) => a + b, 0) / values.length).toFixed(1);
+  return values.reduce((a, b) => a + b, 0) / values.length;
 }
 
-fetch('/data/ideas.json').then(r => r.json()).then(ideas => {
-  const sorted = [...ideas].sort((a, b) => {
-    if (a.tier !== b.tier) return a.tier.localeCompare(b.tier);
-    return Number(averageScore(b.scores)) - Number(averageScore(a.scores));
+function scoreValue(item, key) {
+  if (key === 'avg') return averageScore(item.scores);
+  return Number(item.scores?.[key] || 0);
+}
+
+function render(ideas) {
+  const tierValue = tierFilter.value;
+  const sortKey = sortBy.value;
+
+  const filtered = ideas.filter(item => tierValue === 'ALL' ? true : item.tier === tierValue);
+  const sorted = [...filtered].sort((a, b) => {
+    if (scoreValue(b, sortKey) !== scoreValue(a, sortKey)) {
+      return scoreValue(b, sortKey) - scoreValue(a, sortKey);
+    }
+    return averageScore(b.scores) - averageScore(a.scores);
   });
 
   const t1 = sorted.filter(i => i.tier === 'T1');
@@ -27,7 +40,7 @@ fetch('/data/ideas.json').then(r => r.json()).then(ideas => {
   const t3 = sorted.filter(i => i.tier === 'T3');
 
   summary.innerHTML = `
-    <article class="card"><strong>${ideas.length}</strong><span>当前机会卡</span></article>
+    <article class="card"><strong>${filtered.length}</strong><span>当前展示项目</span></article>
     <article class="card"><strong>${t1.length}</strong><span>T1 优先方向</span></article>
     <article class="card"><strong>${t2.length}</strong><span>T2 备选方向</span></article>
     <article class="card"><strong>${t3.length}</strong><span>T3 暂不优先</span></article>
@@ -35,13 +48,13 @@ fetch('/data/ideas.json').then(r => r.json()).then(ideas => {
 
   topCards.innerHTML = sorted.slice(0, 5).map(item => `
     <article class="card idea-card">
-      <div class="idea-top"><span class="tier ${item.tier}">${item.tier}</span><span class="avg">综合 ${averageScore(item.scores)}</span></div>
+      <div class="idea-top"><span class="tier ${item.tier}">${item.tier}</span><span class="avg">综合 ${averageScore(item.scores).toFixed(1)}</span></div>
       <h3>${item.name}</h3>
       <p>${item.summary}</p>
       <div class="meta">定位：${item.positioning}</div>
       <div class="meta">仓库：${item.repo}</div>
     </article>
-  `).join('');
+  `).join('') || '<article class="card">暂无结果</article>';
 
   const board = (title, list) => `
     <section class="tier-board">
@@ -50,21 +63,17 @@ fetch('/data/ideas.json').then(r => r.json()).then(ideas => {
         <div class="tier-row">
           <strong>${item.name}</strong>
           <span>${item.positioning}</span>
-          <span>综合 ${averageScore(item.scores)}</span>
+          <span>综合 ${averageScore(item.scores).toFixed(1)}</span>
         </div>
       `).join('') : '<div class="tier-row empty">暂无项目</div>'}
     </section>
   `;
 
-  tierBoards.innerHTML = [
-    board('T1', t1),
-    board('T2', t2),
-    board('T3', t3)
-  ].join('');
+  tierBoards.innerHTML = [board('T1', t1), board('T2', t2), board('T3', t3)].join('');
 
   allIdeas.innerHTML = sorted.map(item => `
     <article class="card idea-card">
-      <div class="idea-top"><span class="tier ${item.tier}">${item.tier}</span><span class="avg">综合 ${averageScore(item.scores)}</span></div>
+      <div class="idea-top"><span class="tier ${item.tier}">${item.tier}</span><span class="avg">综合 ${averageScore(item.scores).toFixed(1)}</span></div>
       <h3>${item.name}</h3>
       <p>${item.summary}</p>
       <div class="score-list">
@@ -75,5 +84,11 @@ fetch('/data/ideas.json').then(r => r.json()).then(ideas => {
         <ul>${(item.why_now || []).map(x => `<li>${x}</li>`).join('')}</ul>
       </div>
     </article>
-  `).join('');
+  `).join('') || '<article class="card">暂无结果</article>';
+}
+
+fetch('/data/ideas.json').then(r => r.json()).then(ideas => {
+  render(ideas);
+  tierFilter.addEventListener('change', () => render(ideas));
+  sortBy.addEventListener('change', () => render(ideas));
 });
