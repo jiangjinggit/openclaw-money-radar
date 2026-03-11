@@ -1,0 +1,68 @@
+[
+  {
+    "id": "security-audit-cost-governance",
+    "name": "OpenClaw 安全审计 / 安全体检 / 成本治理报告器",
+    "tier": "T1",
+    "positioning": "short-term-first-money",
+    "repo": "openclaw-security-audit-lite",
+    "summary": "面向自托管用户的扫描、风险评分、修复建议与报告交付产品。",
+    "why_now": [
+      "痛点强，接近损失预防",
+      "更适合异步与模板化交付",
+      "7-14 天可做 MVP",
+      "适合内容驱动获客"
+    ]
+  },
+  {
+    "id": "monitor-lite-agent-ops-shell",
+    "name": "OpenClaw Monitor Lite / Agent Ops Lite",
+    "tier": "T1",
+    "positioning": "long-term-retention-shell",
+    "repo": "openclaw-monitor-lite",
+    "summary": "面向持续运行层的成本、告警、节点健康、错误日志主壳。",
+    "why_now": [
+      "长期留存逻辑更强",
+      "适合做订阅层",
+      "可逐步扩到多节点和团队版"
+    ]
+  },
+  {
+    "id": "template-market",
+    "name": "OpenClaw 行业模板包 / 工作流商店",
+    "tier": "T2",
+    "positioning": "low-ticket-growth-entry",
+    "repo": "openclaw-template-market",
+    "summary": "适合快速上线的模板包和场景包产品。",
+    "why_now": [
+      "上线快",
+      "数字产品化容易",
+      "适合做增长入口"
+    ]
+  },
+  {
+    "id": "knowledge-products",
+    "name": "OpenClaw 知识 / 培训 / 方法论产品",
+    "tier": "T2",
+    "positioning": "knowledge-training-layer",
+    "repo": "openclaw-knowledge",
+    "summary": "适合沉淀教程、培训、方法论、资产包和知识产品。",
+    "why_now": [
+      "适合内容沉淀",
+      "可做长期品牌资产",
+      "可与产品线联动"
+    ]
+  },
+  {
+    "id": "multi-node-governance-console",
+    "name": "OpenClaw 多节点 / 多账号运维与治理面板",
+    "tier": "T2",
+    "positioning": "long-term-expansion",
+    "repo": "openclaw-monitor-lite",
+    "summary": "面向更复杂团队场景的运维、治理与统一视图扩展层。",
+    "why_now": [
+      "团队场景价值高",
+      "可作为长期扩展",
+      "但首版复杂度更高"
+    ]
+  }
+]

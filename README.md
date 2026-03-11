@@ -58,6 +58,8 @@ openclaw-money-radar/
 - `docs/PRODUCT_MATRIX_2026_03.md`
 - `docs/TIER_RANKING.md`
 - `docs/CASHFLOW_VS_SHELL.md`
+- `docs/TOP5_OPPORTUNITIES.md`
+- `data/ideas.json`
 
 ## 下一步
 
