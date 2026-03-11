@@ -12,6 +12,8 @@
 - [ ] 增加 ideas.json / sqlite
 - [ ] 生成按时间排序的项目卡列表
 - [ ] 增加 T1/T2/T3 排行榜
+- [x] 落盘短期现金流 vs 长期主壳判断
+- [x] 落盘产品矩阵判断（security / monitor / template / knowledge / radar）
 
 ## v0.3
 - [ ] 增加 Web UI
