@@ -11,9 +11,10 @@
 - [ ] 将定时任务结果沉淀到本地文件
 - [ ] 增加 ideas.json / sqlite
 - [ ] 生成按时间排序的项目卡列表
-- [ ] 增加 T1/T2/T3 排行榜
+- [x] 增加 T1/T2/T3 排行榜
 - [x] 落盘短期现金流 vs 长期主壳判断
 - [x] 落盘产品矩阵判断（security / monitor / template / knowledge / radar）
+- [x] 增加短期现金流 vs 长期主壳对比页
 
 ## v0.3
 - [ ] 增加 Web UI

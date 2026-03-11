@@ -56,6 +56,8 @@ openclaw-money-radar/
 - `docs/SHORT_TERM_CASHFLOW.md`
 - `docs/LONG_TERM_SHELLS.md`
 - `docs/PRODUCT_MATRIX_2026_03.md`
+- `docs/TIER_RANKING.md`
+- `docs/CASHFLOW_VS_SHELL.md`
 
 ## 下一步
 
