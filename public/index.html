@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenClaw Money Radar</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <span class="eyebrow">OpenClaw 商业机会雷达 / 排行榜</span>
+      <h1>先看当前最值得做的方向，再决定先赚第一笔钱还是先做长期主壳。</h1>
+      <p>这个页面把当前机会池按梯队、定位和评分直接展示出来，帮助快速判断：什么该先做，什么适合长期做，什么暂时不优先。</p>
+    </div>
+    <div class="badge">v0.2</div>
+  </header>
+
+  <section class="summary" id="summary"></section>
+
+  <section>
+    <h2>Top 机会卡</h2>
+    <div id="topCards" class="grid"></div>
+  </section>
+
+  <section>
+    <h2>T1 / T2 / T3 排行榜</h2>
+    <div id="tierBoards" class="tier-boards"></div>
+  </section>
+
+  <section>
+    <h2>全部项目</h2>
+    <div id="allIdeas" class="grid"></div>
+  </section>
+
+  <script src="/app.js"></script>
+</body>
+</html>

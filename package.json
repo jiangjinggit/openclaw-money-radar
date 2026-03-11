@@ -4,8 +4,8 @@
   "private": true,
   "description": "OpenClaw ecosystem business opportunity radar and investment committee prompt pack",
   "scripts": {
-    "dev": "node -e \"console.log('OpenClaw Money Radar scaffold ready')\"",
-    "start": "node -e \"console.log('OpenClaw Money Radar scaffold ready')\""
+    "dev": "python3 -m http.server 4340",
+    "start": "python3 -m http.server 4340"
   },
   "keywords": [
     "openclaw",

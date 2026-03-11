@@ -63,12 +63,19 @@ openclaw-money-radar/
 - `docs/SCORING_MODEL.md`
 - `data/ideas.json`
 
+## 当前可预览内容
+
+- 最小静态排行榜页：`public/index.html`
+- 数据源：`data/ideas.json`
+- 本地预览：`npm run dev` 后打开 `http://127.0.0.1:4340/public/`
+
 ## 下一步
 
-- 补前端展示页（项目卡 + 排行榜）
-- 增加 ideas.json / sqlite 存储
+- 扩充更多机会卡与字段
+- 增加 sqlite / 更正式的数据层
 - 接入定时任务产出沉淀
 - 加上导出为 Markdown / Feishu / Notion 的能力
+- 后续可补筛选、排序、详情页
 
 ## 说明
 
